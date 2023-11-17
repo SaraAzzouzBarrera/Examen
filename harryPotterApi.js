@@ -8,13 +8,18 @@ window.onload= async() => {
         const htmlElement= document.getElementById("characters");
         const newElement= document.createElement("div");
         newElement.innerHTML=`
-            <h3>Character: ${character.lastName}</h3>
-            <p>Elixir: ${character.elixirs.name}</p>`
-
-        htmlElement.appendChild(newElement);
+            <h3>Character: ${character.lastName}</h3>`
+            htmlElement.appendChild(newElement);
     }
-
+    
+        const htmlElement2= document.getElementById("elixirs");
+        const newElement2= document.getElementById("div")
+            newElement2.innerHTML=`<p>Elixirs: ${elixirs.name}`
+            htmlElement2.appendChild(newElement2);
+    
+    
 };
+
 
 async function getCharacters(){
     const response= await fetch(`${URL_API}/wizards`);

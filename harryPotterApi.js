@@ -23,7 +23,6 @@ window.onload= async() => {
     const newElement6= document.createElement("div");
     newElement6.innerHTML=`
         <h3>House: ${house.name}</h3>`
-    
         htmlElement6.appendChild(newElement6);
     }
     
@@ -50,6 +49,24 @@ async function elixir(id){
             htmlElement.appendChild(newElement3);   
         }
 }
+
+async function imageHouse(house){
+    const houses= await getPictuteHogwarts(house);
+        for(const casa of houses.name){
+            const htmlElement= document.getElementById("houses");
+            const newElement3= document.createElement("div");
+            if(casa.name.equals(Gryffindor)){
+            newElement3.innerHTML=`Imatge: <img  src="https://burrow.hogwartsishere.com/storage/img/book-blank.png">`
+            htmlElement.appendChild(newElement3);   
+            }
+        }
+}
+async function getPictuteHogwarts(name){
+    const response= await fetch(`${URL_API}/houses/${name}`);
+    const data= await response.json()
+    return data;
+}
+
 
 async function casesHogwarts(){
     const response= await fetch(`${URL_API}/houses`);

@@ -11,18 +11,20 @@ window.onload= async() => {
             htmlElement.appendChild(newElement);
             
             for (const elixir of character.elixirs) {
-        const newElement2= document.createElement("div")
+        const newElement2= document.createElement("div");
+        const ingredientes= `ingredients${elixir.id}`;
         newElement2.innerHTML=`<h5>Elixirs: ${elixir.name}</h5>
         <button onclick= "elixir('${elixir.id}')">Ingredients</button>
-        `
-        htmlElement.appendChild(newElement2);   
+        <div id="${ingredientes}"></div>        `
+        htmlElement.appendChild(newElement2);  
          }    
     }
     for(const house of cases){
-    const htmlElement6= document.getElementById("house");
+    const htmlElement6= document.getElementById("houses");
     const newElement6= document.createElement("div");
     newElement6.innerHTML=`
-        <h3>House: ${house.name}</h3>`
+        <h3>House: ${house.name}</h3>
+        <img src=img('${house.name}')>`
         htmlElement6.appendChild(newElement6);
     }
     
@@ -42,16 +44,15 @@ async function getIngredients(id){
 async function elixir(id){
     const ingredients= await getIngredients(id);
         for(const ingred of ingredients.ingredients){
-            const htmlElement= document.getElementById("characters");
-
+            const htmlElement3= document.getElementById(`ingredients${id}`);
             const newElement3= document.createElement("div");
-            newElement3.innerHTML=`<h3>idIngredient: ${ingred.name}</h3>`
-            htmlElement.appendChild(newElement3);   
+            newElement3.innerHTML=`<p>Ingredients: ${ingred.name}</p>`
+            htmlElement3.appendChild(newElement3);   
         }
 }
 
 async function imageHouse(house){
-    const houses= await getPictuteHogwarts(house);
+    const houses= await getPictureHogwarts(house);
         for(const casa of houses.name){
             const htmlElement= document.getElementById("houses");
             const newElement3= document.createElement("div");
@@ -61,15 +62,16 @@ async function imageHouse(house){
             }
         }
 }
-async function getPictuteHogwarts(name){
+
+async function getPictureHogwarts(name){
     const response= await fetch(`${URL_API}/houses/${name}`);
     const data= await response.json()
     return data;
 }
-
 
 async function casesHogwarts(){
     const response= await fetch(`${URL_API}/houses`);
     const data= await response.json()
     return data;
 }
+

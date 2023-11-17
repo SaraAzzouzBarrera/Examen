@@ -7,14 +7,14 @@ window.onload= async() => {
         const htmlElement= document.getElementById("characters");
         const newElement= document.createElement("div");
         newElement.innerHTML=`
-            <h3>Character: ${character.lastName}</h3>`;
+            <h3 class="characters">${character.lastName}</h3>`;
             htmlElement.appendChild(newElement);
             
             for (const elixir of character.elixirs) {
         const newElement2= document.createElement("div");
         const ingredientes= `ingredients${elixir.id}`;
         newElement2.innerHTML=`<h5>Elixirs: ${elixir.name}</h5>
-        <button onclick= "elixir('${elixir.id}')">Ingredients</button>
+        <button class="button" onclick= "elixir('${elixir.id}')">Ingredients</button>
         <div id="${ingredientes}"></div>        `
         htmlElement.appendChild(newElement2);  
          }    
@@ -74,4 +74,3 @@ async function casesHogwarts(){
     const data= await response.json()
     return data;
 }
-

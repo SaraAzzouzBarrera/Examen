@@ -1,6 +1,33 @@
 body{
-background-color: bisque;
+    font-size: medium;
+    font-family:'Courier New', Courier, monospace;
+    background-color:rgb(99, 88, 64);
 }
-.harry{
-    background-color:rgb(238, 204, 204);
+
+main{
+    background-color: rgb(199, 185, 163);
+    margin: 10px 10px;  
+    padding: 5px 5px;
+}
+header{
+    font-family:'Times New Roman', Times, serif;
+    background-color:rgb(99, 88, 64);
+    text-align: center;
+    font-size: 25px;
+    color: rgb(253, 252, 252);
+}
+.characters{
+    background-color: rgb(199, 185, 163);
+    font-weight: 800;
+    border-bottom: 1px solid rgb(99, 88, 64);
+}
+.button:hover{
+    background-color:rgb(99, 88, 64);
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 14px;
+    margin: 2px 2px;
+    cursor: pointer;
 }

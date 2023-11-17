@@ -15,10 +15,14 @@ window.onload= async() => {
         const ingredientes= `ingredients${elixir.id}`;
         newElement2.innerHTML=`<h5>Elixirs: ${elixir.name}</h5>
         <button class="button" onclick= "elixir('${elixir.id}')">Ingredients</button>
-        <div id="${ingredientes}"></div>        `
-        htmlElement.appendChild(newElement2);  
-         }    
+        <div id="${ingredientes}"></div>`
+        htmlElement.appendChild(newElement2); 
+
     }
+    
+    }
+    
+
     for(const house of cases){
     const htmlElement6= document.getElementById("houses");
     const newElement6= document.createElement("div");
@@ -43,12 +47,18 @@ async function getIngredients(id){
 
 async function elixir(id){
     const ingredients= await getIngredients(id);
+    
         for(const ingred of ingredients.ingredients){
             const htmlElement3= document.getElementById(`ingredients${id}`);
             const newElement3= document.createElement("div");
-            newElement3.innerHTML=`<p>Ingredients: ${ingred.name}</p>`
+    if(htmlElement3.innerHTML==''){
+            htmlElement3.innerHTML=`<p>Ingredients: ${ingred.name}</p>`
             htmlElement3.appendChild(newElement3);   
         }
+    else{
+        alert("No hi ha mes ingredients")
+    } 
+}    
 }
 
 async function imageHouse(house){
@@ -74,3 +84,4 @@ async function casesHogwarts(){
     const data= await response.json()
     return data;
 }
+

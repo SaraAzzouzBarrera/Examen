@@ -17,11 +17,8 @@ window.onload= async() => {
         <button class="button" onclick= "elixir('${elixir.id}')">Ingredients</button>
         <div id="${ingredientes}"></div>`
         htmlElement.appendChild(newElement2); 
-
+        }
     }
-    
-    }
-    
 
     for(const house of cases){
     const htmlElement6= document.getElementById("houses");
@@ -46,20 +43,23 @@ async function getIngredients(id){
 }
 
 async function elixir(id){
-    const ingredients= await getIngredients(id);
-    
-        for(const ingred of ingredients.ingredients){
-            const htmlElement3= document.getElementById(`ingredients${id}`);
-            const newElement3= document.createElement("div");
+    const htmlElement3= document.getElementById(`ingredients${id}`);
+    const ingredients= await getIngredients(id);  
     if(htmlElement3.innerHTML==''){
-            htmlElement3.innerHTML=`<p>Ingredients: ${ingred.name}</p>`
-            htmlElement3.appendChild(newElement3);   
+    for(const ingred of ingredients.ingredients){
+        const newElement3= document.createElement("div");
+        newElement3.innerHTML=`<p>Ingredients: ${ingred.name}</p>`
+        htmlElement3.appendChild(newElement3);    
         }
+
+    }
     else{
-        alert("No hi ha mes ingredients")
-    } 
-}    
+        htmlElement3.innerHTML= '';
+    }
+
+
 }
+        
 
 async function imageHouse(house){
     const houses= await getPictureHogwarts(house);
@@ -67,7 +67,7 @@ async function imageHouse(house){
             const htmlElement= document.getElementById("houses");
             const newElement3= document.createElement("div");
             if(casa.name.equals(Gryffindor)){
-            newElement3.innerHTML=`Imatge: <img  src="https://burrow.hogwartsishere.com/storage/img/book-blank.png">`
+            newElement3.innerHTML=`Imatge: <img src="imaganes/R.jpg"}'>`
             htmlElement.appendChild(newElement3);   
             }
         }

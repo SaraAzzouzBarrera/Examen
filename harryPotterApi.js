@@ -24,8 +24,8 @@ window.onload= async() => {
     const htmlElement6= document.getElementById("houses");
     const newElement6= document.createElement("div");
     newElement6.innerHTML=`
-        <h3>House: ${house.name}</h3>
-        <img src=img('${house.name}')>`
+        <h3>${house.name}</h3>
+        <img src="pictures/${house.name}.jpg">`
         htmlElement6.appendChild(newElement6);
     }
     
@@ -59,20 +59,7 @@ async function elixir(id){
 
 
 }
-        
-
-async function imageHouse(house){
-    const houses= await getPictureHogwarts(house);
-        for(const casa of houses.name){
-            const htmlElement= document.getElementById("houses");
-            const newElement3= document.createElement("div");
-            if(casa.name.equals(Gryffindor)){
-            newElement3.innerHTML=`Imatge: <img src="imaganes/R.jpg"}'>`
-            htmlElement.appendChild(newElement3);   
-            }
-        }
-}
-
+    
 async function getPictureHogwarts(name){
     const response= await fetch(`${URL_API}/houses/${name}`);
     const data= await response.json()

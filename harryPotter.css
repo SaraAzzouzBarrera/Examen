@@ -31,3 +31,18 @@ header{
     margin: 2px 2px;
     cursor: pointer;
 }
+
+.houses {
+    display: grid;
+    gap: 20px; 
+}
+
+.houses{
+    display: grid;
+    gap: 20px; 
+
+}
+#griffindor, #hufflepuff, #ravenclaw, #slytherin {
+    width: 300px; 
+    grid-template-columns: repeat(2, 1fr);
+}

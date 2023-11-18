@@ -21,12 +21,24 @@ window.onload= async() => {
     }
 
     for(const house of cases){
-    const htmlElement6= document.getElementById("houses");
-    const newElement6= document.createElement("div");
-    newElement6.innerHTML=`
-        <h3>${house.name}</h3>
-        <img src="pictures/${house.name}.jpg">`
-        htmlElement6.appendChild(newElement6);
+    const htmlElement2= document.getElementById("houses");
+    const newElement4= document.createElement("thead");
+    const newElement5= document.createElement("tbody");
+    if(house.name=="Gryffindor"){
+        newElement4.innerHTML=`<th><h3>${house.name}</h3></th>`
+        newElement5.innerHTML=`<td><img id="gryffindor" src="pictures/gryffindor.jpg"></td>`
+        }else if(house.name=="Slytherin"){
+            newElement4.innerHTML=`<th><h3>${house.name}</h3></th>`
+            newElement5.innerHTML=`<td><img id="slytherin" src="pictures/slytherin.jpg"></td>`
+        }else if(house.name=="Hufflepuff"){
+            newElement4.innerHTML=`<th><h3>${house.name}</h3></th>`
+            newElement5.innerHTML=`<td><img id="hufflepuff" src="pictures/hufflepuff.jpg"></td>`
+        }else if(house.name=="Ravenclaw"){
+            newElement4.innerHTML=`<th><h3>${house.name}</h3></th>`
+            newElement5.innerHTML=`<td><img id="ravenclaw" src="pictures/ravenclaw.jpg"></td>`
+        }
+        htmlElement2.querySelector("table").appendChild(newElement4);
+        htmlElement2.querySelector("table").appendChild(newElement5);
     }
     
 };
@@ -71,4 +83,3 @@ async function casesHogwarts(){
     const data= await response.json()
     return data;
 }
-

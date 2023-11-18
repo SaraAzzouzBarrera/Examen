@@ -1,5 +1,5 @@
 body{
-    font-size: medium;
+    font-size:x-large;
     font-family:'Courier New', Courier, monospace;
     background-color:rgb(99, 88, 64);
 }
@@ -31,18 +31,30 @@ header{
     margin: 2px 2px;
     cursor: pointer;
 }
-
-.houses {
-    display: grid;
-    gap: 20px; 
-}
-
-.houses{
-    display: grid;
-    gap: 20px; 
+#houses{
+    border-bottom: 1px solid rgb(99, 88, 64);
 
 }
-#griffindor, #hufflepuff, #ravenclaw, #slytherin {
-    width: 300px; 
-    grid-template-columns: repeat(2, 1fr);
+
+#table{
+    display: grid;
+    margin-top: 20px;
+    align-items: center;
+    margin-left: 100px;
+    grid-template-columns: repeat(4, 1fr);
+    width: 200px;
+}
+#gryffindor, #slytherin, #hufflepuff, #ravenclaw{
+    margin-top: 30px;
+    width: 250px;
+}
+
+@media screen and (max-width:1000px) {
+    #table {
+        display: flex;
+        flex-wrap: flex;
+    }
+    #table{
+        display: block;
+    }
 }

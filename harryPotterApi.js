@@ -121,3 +121,12 @@ async function casesHogwarts(){
     const data= await response.json()
     return data;
 }
+function getHousesTest(button){
+    const htmlElement5= document.getElementById("image");
+    htmlElement5.innerHTML = '';
+    const newElement5= document.createElement("div");
+    newElement5.innerHTML=`
+    <h3 id="yourHouse">🏘 Your house is:</h3>
+    <img id="img" src="pictures/${button}.jpg">`
+    htmlElement5.appendChild(newElement5);
+}

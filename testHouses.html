@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Harry Potter</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Harry Potter API">
+  <meta name="author" content="Sara Azzouz">
+  <link rel="stylesheet" href="harryPotter.css">
+  <script src="harryPotterApi.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Harry's Web</h1>
+  </header>
+
+  <main id="main">
+    <section>
+        <h2 id="first">Are you ready?</h2> 
+    </section>
+    <section> 
+      <form>
+        <div id="question">
+            <h3>What do you prefer?</h3>
+            <button class="buttonHouse" type="button" id="ravenclaw" onclick="getHousesTest(this.id)">Pizza</button>
+            <button class="buttonHouse" type="button" id="slytherin" onclick="getHousesTest(this.id)">Hamburguer</button>
+            <button class="buttonHouse" type="button" id="hufflepuff" onclick="getHousesTest(this.id)">Pasta</button>
+            <button class="buttonHouse" type="button" id="gryffindor" onclick="getHousesTest(this.id)">Soup</button>
+        </div>
+      </form>
+      <section id="image"></section>
+      <p><a href="harryPotter.html">Go Back</a></p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2037 - Harry Potter</p>
+  </footer>
+</body>
+
+</html>

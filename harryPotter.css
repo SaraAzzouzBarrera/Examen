@@ -1,9 +1,11 @@
 body{
-    font-size:x-large;
+    font-size:larger;
     font-family:'Courier New', Courier, monospace;
     background-color:rgb(99, 88, 64);
 }
-
+#ingredients{
+    font-size: 15px;
+}
 main{
     background-color: rgb(199, 185, 163);
     margin: 10px 10px;  
@@ -31,6 +33,7 @@ header{
     margin: 2px 2px;
     cursor: pointer;
 }
+
 #houses{
     border-bottom: 1px solid rgb(99, 88, 64);
 
@@ -40,7 +43,7 @@ header{
     display: grid;
     margin-top: 20px;
     align-items: center;
-    margin-left: 100px;
+    position: center;
     grid-template-columns: repeat(4, 1fr);
     width: 200px;
 }
@@ -49,7 +52,17 @@ header{
     width: 250px;
 }
 
-@media screen and (max-width:1000px) {
+#destacarButton{
+    background-color:rgb(167, 123, 28);
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 14px;
+    margin: 2px 2px;
+    cursor: pointer;
+}
+@media screen and (max-width:600px) {
     #table {
         display: flex;
         flex-wrap: flex;
@@ -57,4 +70,29 @@ header{
     #table{
         display: block;
     }
+}
+
+#favC{
+    background-color: rgb(99, 88, 64);
+    position: fixed; 
+    margin-top: 50px;
+    right: 80px;
+}
+#favH{
+    background-color: rgb(99, 88, 64);
+    position: fixed; 
+    margin-top: 250px;
+    right: 100px;
+
+}
+
+.houseButton{
+    background-color:rgb(167, 123, 28);
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 14px;
+    margin: 2px 2px;
+    cursor: pointer;
 }
